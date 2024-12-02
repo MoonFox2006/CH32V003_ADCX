@@ -32,24 +32,24 @@ void ADCJ_Init(uint8_t channel) {
 //        GPIO_InitStructure.GPIO_Pin = 0;
         if (channel <= 1) { // Channel_0 | Channel_1 (PA2, PA1)
             if (channel == 0) // Channel_0 (PA2)
-                GPIO_InitStructure.GPIO_Pin |= GPIO_Pin_2;
+                GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2;
             else // Channel_1 (PA1)
-                GPIO_InitStructure.GPIO_Pin |= GPIO_Pin_1;
+                GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;
             GPIO_Init(GPIOA, &GPIO_InitStructure);
         } else if (channel == 2) { // Channel_2 (PC4)
             GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4;
             GPIO_Init(GPIOC, &GPIO_InitStructure);
         } else { // Channel_3..Channel_7 (PD2, PD3, PD5, PD6, PD4)
             if (channel == 3) // Channel_3 (PD2)
-                GPIO_InitStructure.GPIO_Pin |= GPIO_Pin_2;
+                GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2;
             else if (channel == 4) // Channel_4 (PD3)
-                GPIO_InitStructure.GPIO_Pin |= GPIO_Pin_3;
+                GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3;
             else if (channel == 5) // Channel_5 (PD5)
-                GPIO_InitStructure.GPIO_Pin |= GPIO_Pin_5;
+                GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5;
             else if (channel == 6) // Channel_6 (PD6)
-                GPIO_InitStructure.GPIO_Pin |= GPIO_Pin_6;
+                GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6;
             else // Channel_7 (PD4)
-                GPIO_InitStructure.GPIO_Pin |= GPIO_Pin_4;
+                GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4;
             GPIO_Init(GPIOD, &GPIO_InitStructure);
         }
     }
